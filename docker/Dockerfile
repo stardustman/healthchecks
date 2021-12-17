@@ -21,6 +21,7 @@ COPY --from=builder /wheels /wheels
 
 RUN \
     apt update && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/locatime && \
     apt install -y libpq5 && \
     rm -rf /var/apt/cache
 
